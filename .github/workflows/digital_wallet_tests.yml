@@ -1,0 +1,24 @@
+name: Digital Wallet System affordability & withdrawal
+on: push
+
+jobs: 
+  test:
+  runs-on: ubuntu-latest
+  
+  steps: 
+    - uses: actions/checkout@v7
+
+    - name: Set up python
+      uses: actions/setup-python@v7
+      with:
+      python-version: '3.11.9'
+
+    - name: Set up pytest
+      run: pip install pytest==9.0.2
+
+    - name: Test Withdrawal
+      run: python -m pytest tests/test_withdrawal.py -v
+
+    - name: Test Affordability
+      if: success() || failure()
+      run: python -m pytest tests/test_affordability.py -v
