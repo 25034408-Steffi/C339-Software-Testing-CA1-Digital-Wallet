@@ -11,7 +11,7 @@ jobs:
       - name: Set up python
         uses: actions/setup-python@v7
         with:
-          python-version: '3.11.9'
+          python-version: '3.11'
 
       - name: Set up pytest
         run: pip install pytest==9.0.2
