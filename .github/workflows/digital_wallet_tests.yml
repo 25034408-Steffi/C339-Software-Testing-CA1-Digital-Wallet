@@ -1,5 +1,17 @@
 name: Digital Wallet System affordability & withdrawal
-on: push
+on: 
+  pull_request:
+    branches:
+    - main
+
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+    
 
 jobs: 
   test:
