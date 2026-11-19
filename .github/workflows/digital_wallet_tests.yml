@@ -1,4 +1,4 @@
-name: Digital Wallet System affordability & withdrawal
+name: Digital Wallet Pytest (affordability & withdrawal)
 on: 
   pull_request:
     branches:
